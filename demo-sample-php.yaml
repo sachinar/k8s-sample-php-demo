@@ -12,6 +12,6 @@ spec:
     spec:
       containers:
       - name: php-app
-        image: manoj1992/sample-php-app:1.0
+        image: sachinar/sample-phpapp:v1
         ports:
         - containerPort: 80
