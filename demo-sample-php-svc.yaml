@@ -6,7 +6,7 @@ metadata:
   name: php-app
   namespace: demo-namespace
 spec:
-  type: LoadBalancer
+  type: NodePort
   ports:
   - port: 80
     targetPort: 80
