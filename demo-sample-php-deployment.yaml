@@ -1,17 +1,22 @@
-apiVersion: apps/v1beta1 # for versions before 1.6.0 use extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: php-deployment
   namespace: demo-namespace
+  labels:
+    app: php-app
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: php-app
   template:
     metadata:
       labels:
         app: php-app
     spec:
       containers:
-      - name: php-app
+      - name: php
         image: sachinar/sample-phpapp:v1
         ports:
         - containerPort: 80
